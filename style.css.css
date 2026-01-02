@@ -1,5 +1,5 @@
 /* Hacker Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Fira Code', monospace; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
 
 body {
     background-color: #0d1117; /* Dark Background */
@@ -91,6 +91,7 @@ h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; text-shadow: 0 0 10px 
 .comment { color: #8b949e; font-style: italic; font-size: 0.9rem; }
 
 /* Contact Links */
+.contact-output p { margin-bottom: 10px; }
 .contact-output a {
     color: #33ff33;
     text-decoration: none;
