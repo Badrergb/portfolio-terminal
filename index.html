@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badre_Narayanan_RG@Terminal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="terminal-window">
+        <div class="top-bar">
+            <div class="buttons">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+            </div>
+            <div class="title">user@badre-portfolio:~</div>
+        </div>
+
+        <div class="terminal-body">
+            
+            <div class="command-line">
+                <span class="prompt">root@badre:~$</span>
+                <span class="typing-effect">whoami</span>
+            </div>
+            <div class="output">
+                <h1>Badre Narayanan RG</h1>
+                <p>> Data Scientist | Automation Engineer | Football Analyst</p>
+                <p>> Status: <span class="blink">Ready to Hire</span></p>
+            </div>
+
+            <div class="command-line">
+                <span class="prompt">root@badre:~$</span> cat about.txt
+            </div>
+            <div class="output text-block">
+                <p>Integrated MSc Data Science Student at Amrita Vishwa Vidyapeetham.</p>
+                <p>Specialized in building intelligent systems using Python, Java, and RL.</p>
+                <p>Passionate about bridging Data Science with Sports Analytics.</p>
+            </div>
+
+            <div class="command-line">
+                <span class="prompt">root@badre:~$</span> ls ./skills/
+            </div>
+            <div class="output grid-output">
+                <span class="file">[Python]</span>
+                <span class="file">[Java]</span>
+                <span class="file">[SQL]</span>
+                <span class="file">[Machine_Learning]</span>
+                <span class="file">[Graph_Theory]</span>
+                <span class="file">[Automation]</span>
+            </div>
+
+            <div class="command-line">
+                <span class="prompt">root@badre:~$</span> ./run_projects.sh
+            </div>
+            <div class="output project-list">
+                
+                <div class="terminal-card">
+                    <h3>01_Farmer_System.exe</h3>
+                    <p>Stack: Java, PostgreSQL, NetBeans</p>
+                    <p class="comment">// Full-stack app for crop inventory optimization.</p>
+                </div>
+
+                <div class="terminal-card">
+                    <h3>02_Football_AI_Agent.py</h3>
+                    <p>Stack: Python, Reinforcement Learning, Gym</p>
+                    <p class="comment">// Trained agent for optimal tactical decisions.</p>
+                </div>
+
+                <div class="terminal-card">
+                    <h3>03_Pass_Network_Viz.ipynb</h3>
+                    <p>Stack: Python, NetworkX, Matplotlib</p>
+                    <p class="comment">// Graph theory analysis of player passing flows.</p>
+                </div>
+
+            </div>
+
+            <div class="command-line">
+                <span class="prompt">root@badre:~$</span> contact --info
+            </div>
+            <div class="output contact-output">
+                <p>Email: <a href="mailto:narayananbadre@gmail.com">narayananbadre@gmail.com</a></p>
+                <p>Phone: <a href="tel:+917418806611">+91 74188 06611</a></p>
+                <p>GitHub: <a href="https://github.com/Badrergb" target="_blank">github.com/Badrergb</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/badre-narayanan-a81852251/" target="_blank">linkedin.com/in/badre</a></p>
+            </div>
+
+            <div class="command-line">
+                <span class="prompt">root@badre:~$</span> <span class="cursor">_</span>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
