@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badre Narayanan | Data Scientist</title>
+    <title>Badre Narayanan | Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- ULTIMATE THEME --- */
+        /* --- GLASS PRISM THEME --- */
         
         :root {
             --primary: #4f46e5;
             --secondary: #ec4899;
-            --glass: rgba(255, 255, 255, 0.9);
+            --dark: #1e293b;
+            --glass: rgba(255, 255, 255, 0.85); /* Slightly more opaque for readability */
             --glass-nav: rgba(255, 255, 255, 0.7);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
 
         body {
-            /* The Blue/Pink Gradient you liked */
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            /* 1. THE ANIMATED BACKGROUND IS BACK */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             min-height: 100vh;
+            color: var(--dark);
             padding-bottom: 50px;
         }
 
-        /* --- 1. FLOATING NAVIGATION BAR --- */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- FLOATING NAVBAR --- */
         nav {
             position: sticky;
             top: 20px;
@@ -60,9 +70,8 @@
         }
         .btn-resume:hover { background: #3730a3; box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); }
 
-
         /* --- HEADER --- */
-        header { text-align: center; padding: 60px 20px 40px; color: white; }
+        header { text-align: center; padding: 80px 20px 40px; color: white; }
         
         .profile-img {
             width: 160px; height: 160px; border-radius: 50%;
@@ -72,14 +81,17 @@
         }
         .profile-img:hover { transform: scale(1.05); border-color: white; }
 
-        header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 20px; }
+        header h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header p { font-size: 1.2rem; font-weight: 300; opacity: 0.95; margin-bottom: 20px; letter-spacing: 0.5px; }
 
         .social-bar a {
-            color: white; font-size: 1.5rem; margin: 0 10px; transition: 0.3s;
+            display: inline-flex; justify-content: center; align-items: center;
+            width: 45px; height: 45px; background: rgba(255,255,255,0.2);
+            color: white; font-size: 1.2rem; border-radius: 50%; margin: 0 8px;
+            text-decoration: none; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
         }
-        .social-bar a:hover { transform: translateY(-3px); opacity: 0.8; }
-
+        .social-bar a:hover { background: white; color: var(--primary); transform: translateY(-3px); }
 
         /* --- MAIN CONTAINER --- */
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
@@ -88,57 +100,76 @@
             background: var(--glass); backdrop-filter: blur(20px);
             border-radius: 25px; padding: 40px; margin-bottom: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: 0.4s;
         }
+        .glass-card:hover { transform: translateY(-5px); }
 
         .section-title {
-            font-size: 1.5rem; color: var(--primary); margin-bottom: 25px;
-            display: flex; align-items: center; gap: 10px;
+            font-size: 1.6rem; color: var(--primary); margin-bottom: 25px;
+            display: flex; align-items: center; gap: 10px; font-weight: 700;
         }
-        .section-title i { background: #e0e7ff; padding: 8px; border-radius: 8px; }
+        .section-title i { background: #e0e7ff; padding: 10px; border-radius: 12px; font-size: 1.1rem; }
 
+        /* --- EDUCATION SECTION --- */
+        .edu-item {
+            border-left: 4px solid var(--secondary);
+            padding-left: 20px; margin-bottom: 20px;
+        }
+        .edu-item h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .edu-item span { font-weight: 600; color: #555; display: block; margin-bottom: 5px; }
+        .edu-item .year { font-size: 0.9rem; color: #888; font-style: italic; }
 
-        /* --- 2. PROJECT CARDS WITH IMAGES --- */
-        .grid-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-
-        .project-card {
-            background: white; border-radius: 15px; overflow: hidden;
+        /* --- SKILLS GRID --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
+        .skill-box {
+            background: white; padding: 15px; border-radius: 15px; text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
         }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .skill-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .skill-box i { font-size: 1.8rem; color: var(--primary); }
+        .skill-box span { font-size: 0.9rem; font-weight: 600; color: #444; }
 
-        /* Fake Project Image (Gradient Placeholder) */
+        /* --- PROJECT CARDS --- */
+        .grid-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .project-card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
         .project-img {
-            height: 140px; width: 100%;
-            display: flex; align-items: center; justify-content: center;
+            height: 140px; width: 100%; display: flex; align-items: center; justify-content: center;
             color: white; font-size: 3rem;
         }
         .img-1 { background: linear-gradient(45deg, #11998e, #38ef7d); }
         .img-2 { background: linear-gradient(45deg, #ff9966, #ff5e62); }
         .img-3 { background: linear-gradient(45deg, #833ab4, #fd1d1d); }
 
-        .project-info { padding: 20px; }
-        .project-info h3 { margin-bottom: 10px; font-size: 1.2rem; }
-        .project-info p { font-size: 0.9rem; color: #555; margin-bottom: 15px; }
+        .project-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-info h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        .project-info p { font-size: 0.95rem; color: #666; margin-bottom: 15px; line-height: 1.5; flex-grow: 1; }
         
         .tech-tag {
-            font-size: 0.75rem; background: #f3f4f6; padding: 4px 10px;
-            border-radius: 20px; color: #555; font-weight: 600; margin-right: 5px;
+            font-size: 0.75rem; background: #f3f4f6; padding: 5px 12px;
+            border-radius: 20px; color: #555; font-weight: 700; margin-right: 5px;
         }
-
         .view-btn {
-            display: block; margin-top: 15px; text-align: center;
+            display: block; margin-top: 20px; text-align: center;
             background: var(--primary); color: white; text-decoration: none;
-            padding: 8px; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
+            padding: 10px; border-radius: 12px; font-weight: 600; transition: 0.3s;
         }
-
+        .view-btn:hover { background: #3730a3; }
 
         /* --- CONTACT --- */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-        .contact-item i { font-size: 1.8rem; color: var(--secondary); margin-bottom: 10px; display: block; }
-        .contact-item a { color: #333; text-decoration: none; font-weight: 500; }
+        .contact-item { padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.5); }
+        .contact-item i { font-size: 2rem; color: var(--secondary); margin-bottom: 10px; display: block; }
+        .contact-item a { color: #333; text-decoration: none; font-weight: 600; }
 
         @media (max-width: 768px) {
-            nav { display: none; } /* Hide nav on small mobile for simplicity */
+            nav { display: none; } /* Simplified for mobile */
             header h1 { font-size: 2.5rem; }
         }
     </style>
@@ -149,8 +180,9 @@
         <a href="#" class="nav-logo">Badre.RG</a>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
             <a href="resume.pdf" class="btn-resume">Download CV</a>
         </div>
     </nav>
@@ -172,11 +204,46 @@
 
         <div id="about" class="glass-card">
             <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
-            <p style="color: #444; line-height: 1.7;">
+            <p style="color: #444; line-height: 1.8; font-size: 1.05rem;">
                 I am an <strong>Integrated MSc Data Science</strong> student at Amrita Vishwa Vidyapeetham. 
-                I specialize in <strong>Sports Analytics</strong> and <strong>AI</strong>. 
-                My goal is to build intelligent systems that bridge the gap between complex data and real-world sports tactics using Graph Theory and Reinforcement Learning.
+                My unique strength lies in bridging the gap between <strong>Complex Data</strong> and <strong>Sports Analytics</strong>. 
+                I build intelligent systems using Graph Theory and Reinforcement Learning, while utilizing my Full Stack skills to deploy them as real-world applications.
             </p>
+        </div>
+
+        <div id="education" class="glass-card">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Certifications</h2>
+            
+            <div class="edu-item">
+                <h3>Integrated MSc Data Science</h3>
+                <span>Amrita Vishwa Vidyapeetham</span>
+                <span class="year">2022 - 2027</span>
+            </div>
+            
+            <div class="edu-item">
+                <h3>Higher Secondary (CBSE)</h3>
+                <span>Chelammal Vidhyaashram</span>
+                <span class="year">Completed 2022</span>
+            </div>
+
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1);">
+                <h4 style="margin-bottom: 10px; color: #555;">Certifications</h4>
+                <span style="background: #e0e7ff; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; color: var(--primary); font-weight: 600;">Data Analysis with Python (IBM)</span>
+            </div>
+        </div>
+
+        <div id="skills" class="glass-card">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-box"><i class="fab fa-python"></i> <span>Python & AI</span></div>
+                <div class="skill-box"><i class="fab fa-java"></i> <span>Java Dev</span></div>
+                <div class="skill-box"><i class="fas fa-database"></i> <span>SQL / Postgres</span></div>
+                <div class="skill-box"><i class="fas fa-chart-network"></i> <span>Graph Theory</span></div>
+                <div class="skill-box"><i class="fas fa-futbol"></i> <span>Football Analytics</span></div>
+                <div class="skill-box"><i class="fas fa-robot"></i> <span>Reinforcement Learning</span></div>
+                <div class="skill-box"><i class="fas fa-project-diagram"></i> <span>Automation</span></div>
+                <div class="skill-box"><i class="fab fa-html5"></i> <span>Web Dev</span></div>
+            </div>
         </div>
 
         <div id="projects" class="glass-card">
@@ -188,7 +255,7 @@
                     <div class="project-info">
                         <h3>Farmer Management System</h3>
                         <p>Secure full-stack app for managing crop inventory and sales.</p>
-                        <span class="tech-tag">Java</span><span class="tech-tag">PostgreSQL</span>
+                        <div><span class="tech-tag">Java</span><span class="tech-tag">PostgreSQL</span></div>
                         <a href="https://github.com/Badrergb/Farmer-Management-System" target="_blank" class="view-btn">View Code</a>
                     </div>
                 </div>
@@ -198,7 +265,7 @@
                     <div class="project-info">
                         <h3>RL Football Agent</h3>
                         <p>AI agent trained with Deep Q-Learning for tactical decisions.</p>
-                        <span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span>
+                        <div><span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span></div>
                         <a href="#" class="view-btn">View Code</a>
                     </div>
                 </div>
@@ -208,7 +275,7 @@
                     <div class="project-info">
                         <h3>Pass Network Analysis</h3>
                         <p>Visualizing player passing networks using Graph Theory.</p>
-                        <span class="tech-tag">Python</span><span class="tech-tag">Data Viz</span>
+                        <div><span class="tech-tag">Python</span><span class="tech-tag">Data Viz</span></div>
                         <a href="#" class="view-btn">View Code</a>
                     </div>
                 </div>
