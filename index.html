@@ -11,7 +11,7 @@
     <style>
         /* --- HACKER THEME CSS (Built-in) --- */
         
-        /* Reset */
+        /* Reset & Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Fira Code', 'Courier New', monospace; }
 
         body {
@@ -24,19 +24,19 @@
             color: #33ff33; /* Hacker Green */
         }
 
-        /* Window Styling */
+        /* The Terminal Window */
         .terminal-window {
             width: 100%;
             max-width: 900px;
-            background: #000;
+            background: #000; /* Pure Black Terminal Background */
             border-radius: 10px;
-            box-shadow: 0 0 50px rgba(51, 255, 51, 0.2);
+            box-shadow: 0 0 50px rgba(51, 255, 51, 0.3); /* Stronger Green Glow */
             border: 1px solid #333;
             overflow: hidden;
             animation: fadeIn 1.5s ease;
         }
 
-        /* Top Bar */
+        /* Top Bar (Mac Style) */
         .top-bar {
             background: #161b22;
             padding: 10px 15px;
@@ -58,25 +58,38 @@
             font-size: 0.9rem;
         }
 
-        /* Terminal Body */
+        /* Terminal Content Area */
         .terminal-body {
             padding: 30px;
             height: 600px;
             overflow-y: auto;
+            background-color: #0a0a0a; /* Slightly lighter black for content */
         }
 
-        /* Scrollbar */
+        /* Custom Scrollbar */
         .terminal-body::-webkit-scrollbar { width: 10px; }
         .terminal-body::-webkit-scrollbar-track { background: #000; }
         .terminal-body::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
 
-        /* Typography */
-        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; text-shadow: 0 0 10px #fff; }
+        /* Typography & Animations */
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+            color: #fff; 
+            text-shadow: 0 0 15px #33ff33; /* Green glowing text */
+            animation: breathe 3s infinite ease-in-out;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { text-shadow: 0 0 15px #33ff33; }
+            50% { text-shadow: 0 0 30px #33ff33; }
+        }
+
         .output { margin-bottom: 40px; margin-left: 20px; color: #c9d1d9; }
         .prompt { color: #27c93f; margin-right: 10px; font-weight: bold; }
         .command-line { margin-bottom: 10px; display: flex; align-items: center; }
 
-        /* Blinking Cursor Animation */
+        /* Blinking Cursor */
         .cursor {
             animation: blink 1s infinite;
             background: #27c93f;
@@ -89,7 +102,7 @@
         /* Skills Grid */
         .grid-output { display: flex; flex-wrap: wrap; gap: 15px; }
         .file { color: #79c0ff; cursor: pointer; transition: 0.2s; }
-        .file:hover { text-decoration: underline; color: #fff; text-shadow: 0 0 5px #79c0ff; }
+        .file:hover { text-decoration: underline; color: #fff; text-shadow: 0 0 8px #79c0ff; }
 
         /* Projects */
         .terminal-card {
@@ -106,10 +119,11 @@
             color: #33ff33;
             text-decoration: none;
             border-bottom: 1px dashed #33ff33;
+            transition: 0.3s;
         }
         .contact-output a:hover { background: #33ff33; color: #000; }
 
-        /* Typing Effect for the first line */
+        /* Typing Effect */
         .typing-effect {
             overflow: hidden;
             border-right: 2px solid #33ff33;
@@ -147,7 +161,7 @@
             <div class="output">
                 <h1>Badre Narayanan RG</h1>
                 <p>> Data Scientist | Automation Engineer | Football Analyst</p>
-                <p>> Status: <span style="color: #27c93f; font-weight: bold;">Ready to Hire</span></p>
+                <p>> Status: <span style="color: #27c93f; font-weight: bold; text-shadow: 0 0 5px #27c93f;">Ready to Hire</span></p>
             </div>
 
             <div class="command-line">
